@@ -51,8 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         NavigationDelegate(
           onPageFinished: (String url) {
             _controller.runJavaScript('''
-              document.documentElement.style.background = 'rgba(0, 0, 0, .8)';
-              document.body.style.background = 'rgba(0, 0, 0, .8)';
+           
 
               document.documentElement.addEventListener('click', function(event) {
                 if (event.target === document.documentElement || event.target === document.body) {
@@ -64,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       )
       ..loadRequest(Uri.parse(
-          'https://stocks.tickertape.in/marketwatch/RELIANCE'));
+          'https://stocks.stag.tickertape.in/marketwatch/RELIANCE'));
   }
 
   @override
@@ -89,7 +88,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          if (!_isWebViewVisible)
             ElevatedButton(
               child: const Text('Open WebView'),
               onPressed: () {
